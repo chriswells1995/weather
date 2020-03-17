@@ -1,0 +1,65 @@
+<!-- This sets the doctype to html -->
+<!DOCTYPE html>
+<!-- this sets the html language -->
+<html lang="en">
+<!-- this is the head, it is full of meta data -->
+<head>
+  <!-- this sets the characters and other meta data -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- These CDNs allow us to use bootstrap and font-awsome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- This is out title which will appear in the tab -->
+  <title>Weather Dashboard</title>
+</head>
+<!-- This is out body, it's what will be seen on the site -->
+<body>
+  <!-- These classes are attributed to the header, which prints an aesthetically pleasing, "Weather Dashboard" -->
+  <!-- TODO double check they are all bootstrap -->
+  <header class="container-fluid text-center text-white bg-dark p-2">
+    <h1>Weather Dashboard</h1>
+  </header>
+<!-- This div class creates a container that will hold all of the content -->
+<!-- TODO look up "fluid" -->
+  <div class="container-fluid">
+    <!-- In the container lays this first row -->
+    <div class="row">
+      <!-- In that row there we see the first column, which takes up 3/12ths of the container's width -->
+      <!-- And it has a light background -->
+      <!-- Because it is an aside, is is aligned to the side TODO make more detailed -->
+      <aside class="col-lg-3 bg-light">
+        <!-- mt-1 means "margin top 1, and describes the spacing for this smaller header saying, ""Search for a City" -->
+        <h5 class="mt-1">Search for a City:</h5>
+        <!-- These classes come from bootstrap and are useful for nav bars. -->
+        <div class="form-inline form-group">
+          <!-- This allows the user to input data into the bar under the words "Search for a City," and it gives that input an ID -->
+          <input class="form-control" type="text" id="search-value" />
+          <!-- This creates the blue button with the magnifying class -->
+          <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
+          <!-- This ends the form div -->
+        </div>
+        <!-- This creates an unorderd list which will have previous searches dynamically rendered to it -->
+        <ul class="list-group history"></ul>
+        <!-- This ends the aside -->
+      </aside>
+      <!-- This creates a column in the same row that covers the other 9/12ths of the container -->
+      <div class="col-lg-9">
+        <!-- This creates a div with the ID "today," which will have text dynamically rendered to it, and it has margin=top-3 -->
+        <div id="today" class="mt-3"></div>
+        <!-- This creates a div with the ID "forecast," which will have text dynamically rendered to it, specifically 5 columns, and it has margin=top-3 -->
+        <div id="forecast" class="mt-3"></div>
+        <!-- This ends the column div -->
+      </div>
+      <!-- This ends the row div -->
+    </div>
+    <!-- This ends the container div -->
+  </div>
+  <!-- this CDN allows us to use query -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- This connects to our custom script file -->
+  <script src="script.js"></script>
+</body>
+
+</html>
