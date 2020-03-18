@@ -77,7 +77,18 @@ $(document).ready(function() {
         // The following two functions are defined, passing in the searchValue and the latitude and longitute of the returned api
         getForecast(searchValue);
         getUVIndex(data.coord.lat, data.coord.lon);
-      }
+      },
+      // Our new feature, done in our project group
+        // add error handling to the ajax GET call.  The function operates if an error ia returned by ajax.
+        error: function(xhr, status, error){
+          // xhr.status is the error code (400, etc.), and xhr.statusText is the description ('Bad Request', etc.)
+          var errorMessage = xhr.status + ': ' + xhr.statusText
+          var modalTitle = $('.modal-title');
+          // render the error message to the modal title h5 element
+          modalTitle.text('ERROR: ' + errorMessage);
+          // activate Bootstrap modal dialog
+          $('#myModal').modal('show')
+        }
     });
   }
   // This function is for the 5 day forecast
